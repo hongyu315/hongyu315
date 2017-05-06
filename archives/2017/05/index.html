@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hongyu315.github.io">
-  <title>新一代人</title>
+  <title>Archives: 2017/5 | 新一代人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="新一代人">
-<meta property="og:url" content="https://hongyu315.github.io/index.html">
+<meta property="og:url" content="https://hongyu315.github.io/archives/2017/05/index.html">
 <meta property="og:site_name" content="新一代人">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="新一代人">
@@ -138,72 +138,34 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Objective-c-编码规则" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/05/06/Objective-c-编码规则/" class="archive-article-date">
+  	<time datetime="2017-05-06T07:34:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-06</time>
+</a>
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/06/Objective-c-编码规则/">Objective-c 编码规则</a>
+      <a class="archive-article-title" href="/2017/05/06/Objective-c-编码规则/">Objective-c 编码规则</a>
     </h1>
   
 
-        
-        <a href="/2017/05/06/Objective-c-编码规则/" class="archive-article-date">
-  	<time datetime="2017-05-06T07:34:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="排版规范"><a href="#排版规范" class="headerlink" title="排版规范"></a>排版规范</h2><ul>
-<li>缩进使用4个空格，在Xcode &gt; Preferences &gt; Text Editing将Tab和自动缩进都设置为4个空格。</li>
-<li>每一行的最大长度设置为80，在Xcode &gt; Preferences &gt; Text Editing &gt; Page guide at column:中将最大行长设置为80，过长的一行代码将会导致可读性问题。</li>
-<li>方法大括号和其他大括号(if/else/switch/while等)总是在同一行语句打开但在新行中关闭。</li>
-<li>在-和(void)之间应该有一个空格，第一个大括号{的位置在函数所在行的末尾，同样应该有一个空格。</li>
-<li>如果一个函数有特别多的参数或者名称很长，应该将其按照:来对齐分行显示。</li>
-</ul>
-<h2 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h2><ul>
-<li>类名 ：<br>首字母大写；标示出类型，如果是viewController，统一以ViewController、VC结尾（这种也可以）。</li>
-<li>变量常量名：应该使用驼峰式命名规则，所有的单词首字母大写和加上与类名有关的前缀。</li>
-<li>善用枚举：目前项目中有部分界面需要传递type的，为string类型，无论判断还是传值，其实都不是特别好，建议后续优化为枚举，更清晰与直观 。    </li>
-<li>方法：方法名尽量直观，各个参数也尽可能明确出意思（比如pageIndex、rowIndex等等）。</li>
-<li>宏定义：一定要精确，宁可长，不要省。</li>
-<li>属性：也是使用驼峰式，但首单词的首字母小写。对属性使用auto-synthesis，而不是手动编写@ synthesize语句，除非你有一个好的理由。</li>
-</ul>
-<h2 id="编码规范"><a href="#编码规范" class="headerlink" title="编码规范"></a>编码规范</h2><ul>
-<li>类名以大写字母开头，应该包含一个名词来表示它代表的对象类型，同时可以加上必要的前缀，比如NSString, NSDate, NSScanner, NSApplication等等。</li>
-<li>协议名称应该清晰地表示它所执行的行为，而且要和类名区别开来，所以通常使用ing词尾来命名一个协议，比如NSCopying,NSLocking。</li>
-<li>不要使用单词的简写，拼写出完整的单词。</li>
-<li>= 两边各一个空格。</li>
-<li>@public和@private标记符应该以一个空格来进行缩进。</li>
-<li>方法名的+和-之后空出一格。</li>
-<li>善用#pragma mark。</li>
-<li>在书写协议的时候注意用&lt;&gt;括起来的协议和类型名之间是没有空格的，比如IPCConnectHandler()<ipcpreconnectordelegate>,这个规则适用所有书写协议的地方，包括函数声明、类声明、实例变量等等。</ipcpreconnectordelegate></li>
-<li>较短的block可以写在一行内。<br>如果分行显示的话，block的右括号}应该和调用block那行代码的第一个非空字符对齐。<br>block内的代码采用4个空格的缩进。<br>如果block过于庞大，应该单独声明成一个变量来使用。<br>^ 和(之间，^和{之间都没有空格，参数列表的右括号)和{之间有一个空格。</li>
-<li>构造字典时，字典的Key和Value与中间的冒号:都要留有一个空格。</li>
-<li>当引用的是一个Objective-C的头文件时，使用#import，<br>当引用的是一个C或者C++的头文件时，使用#include，这时必须要保证被引用的文件提供了保护域（#define guard）。</li>
-<li>BOOL在Objective-C中被定义为signed char类型，这意味着一个BOOL类型的变量不仅仅可以表示YES(1)和NO(0)两个值，所以永远不要将BOOL类型变量直接和YES比较。</li>
-<li>在init和dealloc中不要用存取方法访问实例变量。</li>
-<li>按照定义的顺序释放资源。</li>
-<li>Delegate要使用弱引用。</li>
-</ul>
-<h2 id="注释规范"><a href="#注释规范" class="headerlink" title="注释规范"></a>注释规范</h2><ul>
-<li>每一个文件都必须写文件注释。</li>
-<li>所有实体model内各个变量，变量要带有说明。</li>
-<li>类中的变量，如果有特殊用途的（比如有个dictionary做缓存），注释出大概用途。</li>
-<li>对外提供的方法，方法中不直观的参数做注释。</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -215,171 +177,19 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/06/Objective-c-编码规则/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-
-
-
-
-
-
   
-    <article id="post-2017计划" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/16/2017计划/">2017年度计划</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/16/2017计划/" class="archive-article-date">
-  	<time datetime="2017-04-16T04:15:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>建立个人网站</li>
-<li>开发一款私人APP（android和iOS）</li>
-<li>坚持每周写一篇文章</li>
-<li>学习React Native</li>
-<li>学习Tensorflow</li>
-<li>减肥至130斤</li>
-<li>读完4本书（从0到1、关键对话、联盟、经济学通识）</li>
-<li>提高 objective-c 、swift语言掌握程度</li>
-<li>整理出objective-c、swift编码规范</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/16/2017计划/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-感悟" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/12/感悟/">感悟</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/12/感悟/" class="archive-article-date">
-  	<time datetime="2017-04-12T15:19:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>敢于介绍自己，乐于推销自己</li>
-<li>分享有助于帮助自己梳理知识点</li>
-<li>做任何事情都需要积极主动</li>
-<li>错了及时承认</li>
-<li>拒绝暧昧</li>
-<li>真心帮助别人</li>
-<li>认真聆听别人说话</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/12/感悟/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-  
 
 
           </div>
@@ -401,9 +211,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
