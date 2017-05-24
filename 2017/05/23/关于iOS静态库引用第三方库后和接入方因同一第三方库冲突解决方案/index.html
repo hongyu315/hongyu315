@@ -8,13 +8,50 @@
   <link rel="dns-prefetch" href="https://hongyu315.github.io">
   <title>关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案 | 新一代人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="背景
+因业务需要，在提供给别人使用的静态库文件中需要使用第三方库，但是把第三方库集成到静态库SDK成功后，放到Demo中出现冲突。故解决此冲突，反复试了几种方案，最终确定使用其中一种。
+
+方案
+http://pdx.esri.com/blog/namespacing-dependencies/（我这边运行时脚本报错，弃用）
+手动修改所有冲突的地方（工作量大，而且容易出错）
+在文档里面说明引用的第三">
+<meta property="og:type" content="article">
 <meta property="og:title" content="关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案">
-<meta property="og:url" content="https://hongyu315.github.io/2017/05/24/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/index.html">
+<meta property="og:url" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/index.html">
 <meta property="og:site_name" content="新一代人">
-<meta property="og:updated_time" content="2017-05-24T08:04:00.000Z">
+<meta property="og:description" content="背景
+因业务需要，在提供给别人使用的静态库文件中需要使用第三方库，但是把第三方库集成到静态库SDK成功后，放到Demo中出现冲突。故解决此冲突，反复试了几种方案，最终确定使用其中一种。
+
+方案
+http://pdx.esri.com/blog/namespacing-dependencies/（我这边运行时脚本报错，弃用）
+手动修改所有冲突的地方（工作量大，而且容易出错）
+在文档里面说明引用的第三">
+<meta property="og:image" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/1.jpg">
+<meta property="og:image" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/2.jpg">
+<meta property="og:image" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/3.jpg">
+<meta property="og:image" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/4.jpg">
+<meta property="og:image" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/5.jpg">
+<meta property="og:image" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/6.jpg">
+<meta property="og:image" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/7.jpg">
+<meta property="og:image" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/8.jpg">
+<meta property="og:image" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/9.jpg">
+<meta property="og:image" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/10.jpg">
+<meta property="og:image" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/11.jpg">
+<meta property="og:image" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/12.jpg">
+<meta property="og:image" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/13.jpg">
+<meta property="og:image" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/14.jpg">
+<meta property="og:image" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/15.jpg">
+<meta property="og:updated_time" content="2017-05-24T07:16:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案">
+<meta name="twitter:description" content="背景
+因业务需要，在提供给别人使用的静态库文件中需要使用第三方库，但是把第三方库集成到静态库SDK成功后，放到Demo中出现冲突。故解决此冲突，反复试了几种方案，最终确定使用其中一种。
+
+方案
+http://pdx.esri.com/blog/namespacing-dependencies/（我这边运行时脚本报错，弃用）
+手动修改所有冲突的地方（工作量大，而且容易出错）
+在文档里面说明引用的第三">
+<meta name="twitter:image" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="新一代人" type="application/atom+xml">
   
@@ -78,11 +115,7 @@
 				
 					<a class="github" target="_blank" href="https://github.com/hongyu315" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="weibo" target="_blank" href="http://weibo.com/u/1751133093?" title="weibo"><i class="icon-weibo"></i></a>
 		        
 			</div>
 		</nav>
@@ -119,11 +152,7 @@
 					
 						<a class="github" target="_blank" href="https://github.com/hongyu315" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="weibo" target="_blank" href="http://weibo.com/u/1751133093?" title="weibo"><i class="icon-weibo"></i></a>
 			        
 				</div>
 			</nav>
@@ -159,15 +188,50 @@
   
 
         
-        <a href="/2017/05/24/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/" class="archive-article-date">
-  	<time datetime="2017-05-24T08:04:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-24</time>
+        <a href="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/" class="archive-article-date">
+  	<time datetime="2017-05-23T10:14:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
+<li>因业务需要，在提供给别人使用的静态库文件中需要使用第三方库，但是把第三方库集成到静态库SDK成功后，放到Demo中出现冲突。故解决此冲突，反复试了几种方案，最终确定使用其中一种。</li>
+</ul>
+<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><ul>
+<li><a href="http://pdx.esri.com/blog/namespacing-dependencies/（我这边运行时脚本报错，弃用）" target="_blank" rel="external">http://pdx.esri.com/blog/namespacing-dependencies/（我这边运行时脚本报错，弃用）</a></li>
+<li>手动修改所有冲突的地方（工作量大，而且容易出错）</li>
+<li>在文档里面说明引用的第三方库，让接入方了解该怎么做（想过但是不想让接入方太麻烦）；</li>
+<li>在OTHER C Flags 里面进行设置（目前正在使用的）；</li>
+</ul>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ul>
+<li>创建.a静态库</li>
+<li>把第三方库拖进.a静态库</li>
+<li>创建Demo调用.a静态库</li>
+<li>此时应该会报错，记得添加-ObjC</li>
+<li>之后再把第三方库拖到Demo里面</li>
+<li>此时引用会出现冲突，根据冲突提示信息一一进行修改</li>
+<li><p>具体步骤看图吧…</p>
+</li>
+<li><p><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/1.jpg" alt="logo"></p>
+</li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/2.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/3.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/4.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/5.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/6.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/7.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/8.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/9.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/10.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/11.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/12.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/13.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/14.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/15.jpg" alt="logo"></li>
+</ul>
+
       
 
       
@@ -180,7 +244,7 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     
@@ -196,6 +260,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Objective-c</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -246,7 +321,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://hongyu315.github.io/2017/05/24/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -273,29 +348,18 @@
 
 
   
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案" data-title="关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案" data-url="https://hongyu315.github.io/2017/05/24/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
   
   
 
+  
+  <div id="SOHUCS" sid="关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = "cysWTd70q"; 
+var conf = "0aa1754ceb2c2f0b8974130b84158489"; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
   
 
   
@@ -437,7 +501,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">爱奇艺游戏事业部 码农</div>
   	  	
     	</section>
     
