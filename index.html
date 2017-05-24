@@ -49,7 +49,7 @@
 		  <h1 class="header-author"><a href="/">洪雨</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">用黑色眼睛去欣赏光明</p>
+		<p class="header-subtitle">最好的时光是十年前 其次是现在</p>
 		
 
 		<nav class="header-menu">
@@ -99,7 +99,7 @@
 			  <h1 class="header-author js-header-author">洪雨</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>用黑色眼睛去欣赏光明<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>最好的时光是十年前 其次是现在<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -137,6 +137,102 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/">关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/" class="archive-article-date">
+  	<time datetime="2017-05-23T10:14:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
+<li>因业务需要，在提供给别人使用的静态库文件中需要使用第三方库，但是把第三方库集成到静态库SDK成功后，放到Demo中出现冲突。故解决此冲突，反复试了几种方案，最终确定使用其中一种。</li>
+</ul>
+<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><ul>
+<li><a href="http://pdx.esri.com/blog/namespacing-dependencies/（我这边运行时脚本报错，弃用）" target="_blank" rel="external">http://pdx.esri.com/blog/namespacing-dependencies/（我这边运行时脚本报错，弃用）</a></li>
+<li>手动修改所有冲突的地方（工作量大，而且容易出错）</li>
+<li>在文档里面说明引用的第三方库，让接入方了解该怎么做（想过但是不想让接入方太麻烦）；</li>
+<li>在OTHER C Flags 里面进行设置（目前正在使用的）；</li>
+</ul>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ul>
+<li>创建.a静态库</li>
+<li>把第三方库拖进.a静态库</li>
+<li>创建Demo调用.a静态库</li>
+<li>此时应该会报错，记得添加-ObjC</li>
+<li>之后再把第三方库拖到Demo里面</li>
+<li>此时引用会出现冲突，根据冲突提示信息一一进行修改</li>
+<li><p>具体步骤看图吧…</p>
+</li>
+<li><p><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/1.jpg" alt="logo"></p>
+</li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/2.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/3.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/4.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/5.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/6.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/7.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/8.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/9.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/10.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/11.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/12.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/13.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/14.jpg" alt="logo"></li>
+<li><img src="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/15.jpg" alt="logo"></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Objective-c</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-TeamBuilding" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -563,11 +659,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color2">Objective-c</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Objective-c</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
@@ -618,7 +714,7 @@
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;br&gt; 就职于爱奇艺游戏事业部</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">爱奇艺游戏事业部 Android iOS 开发</div>
   	  	
     	</section>
     
