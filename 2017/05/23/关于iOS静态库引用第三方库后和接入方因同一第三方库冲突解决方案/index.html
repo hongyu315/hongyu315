@@ -8,24 +8,14 @@
   <link rel="dns-prefetch" href="https://hongyu315.github.io">
   <title>关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案 | 新一代人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="背景
-因业务需要，在提供给别人使用的静态库文件中需要使用第三方库，但是把第三方库集成到静态库SDK成功后，放到Demo中出现冲突。故解决此冲突，反复试了几种方案，最终确定使用其中一种。
-
-方案
-http://pdx.esri.com/blog/namespacing-dependencies/（我这边运行时脚本报错，弃用）
-手动修改所有冲突的地方（工作量大，而且容易出错）
-在文档里面说明引用的第三">
+  <meta name="description" content="背景 因业务需要，在提供给别人使用的静态库文件中需要使用第三方库，但是把第三方库集成到静态库SDK成功后，放到Demo中出现冲突。故解决此冲突，反复试了几种方案，最终确定使用其中一种。  方案 http://pdx.esri.com/blog/namespacing-dependencies/（我这边运行时脚本报错，弃用） 手动修改所有冲突的地方（工作量大，而且容易出错） 在文档里面说明引用的第三">
+<meta name="keywords" content="Objective-c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案">
 <meta property="og:url" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/index.html">
 <meta property="og:site_name" content="新一代人">
-<meta property="og:description" content="背景
-因业务需要，在提供给别人使用的静态库文件中需要使用第三方库，但是把第三方库集成到静态库SDK成功后，放到Demo中出现冲突。故解决此冲突，反复试了几种方案，最终确定使用其中一种。
-
-方案
-http://pdx.esri.com/blog/namespacing-dependencies/（我这边运行时脚本报错，弃用）
-手动修改所有冲突的地方（工作量大，而且容易出错）
-在文档里面说明引用的第三">
+<meta property="og:description" content="背景 因业务需要，在提供给别人使用的静态库文件中需要使用第三方库，但是把第三方库集成到静态库SDK成功后，放到Demo中出现冲突。故解决此冲突，反复试了几种方案，最终确定使用其中一种。  方案 http://pdx.esri.com/blog/namespacing-dependencies/（我这边运行时脚本报错，弃用） 手动修改所有冲突的地方（工作量大，而且容易出错） 在文档里面说明引用的第三">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/1.jpg">
 <meta property="og:image" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/2.jpg">
 <meta property="og:image" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/3.jpg">
@@ -44,13 +34,7 @@ http://pdx.esri.com/blog/namespacing-dependencies/（我这边运行时脚本报
 <meta property="og:updated_time" content="2017-05-24T07:16:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案">
-<meta name="twitter:description" content="背景
-因业务需要，在提供给别人使用的静态库文件中需要使用第三方库，但是把第三方库集成到静态库SDK成功后，放到Demo中出现冲突。故解决此冲突，反复试了几种方案，最终确定使用其中一种。
-
-方案
-http://pdx.esri.com/blog/namespacing-dependencies/（我这边运行时脚本报错，弃用）
-手动修改所有冲突的地方（工作量大，而且容易出错）
-在文档里面说明引用的第三">
+<meta name="twitter:description" content="背景 因业务需要，在提供给别人使用的静态库文件中需要使用第三方库，但是把第三方库集成到静态库SDK成功后，放到Demo中出现冲突。故解决此冲突，反复试了几种方案，最终确定使用其中一种。  方案 http://pdx.esri.com/blog/namespacing-dependencies/（我这边运行时脚本报错，弃用） 手动修改所有冲突的地方（工作量大，而且容易出错） 在文档里面说明引用的第三">
 <meta name="twitter:image" content="https://hongyu315.github.io/2017/05/23/关于iOS静态库引用第三方库后和接入方因同一第三方库冲突解决方案/PIC/1.jpg">
   
   
