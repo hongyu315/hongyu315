@@ -11,19 +11,19 @@
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>https://raw.githubusercontent.com/hongyu315/hongyu315/master/A.ipa</string>
+					<string>https://raw.githubusercontent.com/hongyu315/hongyu315/master/中国大地超A.ipa</string>
 				</dict>
 				<dict>
 					<key>kind</key>
 					<string>display-image</string>
 					<key>url</key>
-					<string>https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png</string>
+					<string>https://www.baidu.com/icon.png</string>
 				</dict>
 				<dict>
 					<key>kind</key>
 					<string>full-size-image</string>
 					<key>url</key>
-					<string>https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png</string>
+					<string>https://www.baidu.com/icon.png</string>
 				</dict>
 			</array>
 			<key>metadata</key>
